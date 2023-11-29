@@ -66,11 +66,11 @@ Example Login
 </head>
 <body>
 <form action="/" method="get">
-<input double type="text" name="user" id="user" required>
+<input type="text" name="user" id="user" required>
 <br>
-<input double type="password" name="pass" id="pass" required>
+<input type="password" name="pass" id="pass" required>
 <br>
-<input double type="submit" value="Submit">
+<input type="submit" value="Submit">
 </form>
 </body>
 </html>
