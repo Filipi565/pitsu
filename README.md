@@ -16,48 +16,62 @@ or
 pip3 install -i https://test.pypi.org/simple/ --upgrade pitsu
 ```
 
-simple example using with flask:
+simple example:
 
 ```
-from flask import Flask
 from pitsu import *
 
-app = Flask(__name__)
+html(
+    head(
+        meta(charset='UTF-8'),
+        title('Example Login')
+    ),
+    body(
+        form(
+            inp( # inp = input element
+                type='text',
+                name='user',
+                id='user',
+                required=True
+            ),
+            br(),
+            inp(
+                type='password',
+                name='pass',
+                id='pass',
+                required=True
+            ),
+            br(),
+            inp(
+                type='submit',
+                value='Submit'
+            ),
+            action='/',
+            method='get'
+        )
+    ),
+    lang='en'
+).pack()
+```
 
-@app.route('/')
-def index():
-  return html(
-        head(
-            meta(charset='UTF-8'),
-            title('Example Login')
-        ),
-        body(
-            form(
-                inp( # inp = input element
-                    type='text',
-                    name='user',
-                    id='user',
-                    required=True
-                ),
-                br(),
-                inp(
-                    type='password',
-                    name='pass',
-                    id='pass',
-                    required=True
-                ),
-                br(),
-                inp(
-                    type='submit',
-                    value='Submit'
-                ),
-                action='/',
-                method='get'
-            )
-        ),
-        lang='en'
-    ).pack()
+output:
+```
 
-if __name__ == '__main__':
-  app.run()
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>
+Example Login
+</title>
+</head>
+<body>
+<form action="/" method="get">
+<input double type="text" name="user" id="user" required>
+<br>
+<input double type="password" name="pass" id="pass" required>
+<br>
+<input double type="submit" value="Submit">
+</form>
+</body>
+</html>
 ```
