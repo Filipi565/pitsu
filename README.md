@@ -16,7 +16,7 @@ or
 pip3 install -i https://test.pypi.org/simple/ --upgrade pitsu
 ```
 
-example using with flask:
+simple example using with flask:
 
 ```
 from flask import Flask
