@@ -21,4 +21,41 @@ example using with flask:
 ```
 from flask import Flask
 from pitsu import *
+
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+  return html(
+        head(
+            meta(charset='UTF-8'),
+            link(rel='stylesheet', href='style'),
+            title('Example Login')
+        ),
+        body(
+            form(
+                inp( # inp = input element
+                    type='text',
+                    name='user',
+                    id='user',
+                    required=True
+                ),
+                br(),
+                inp(
+                    type='password',
+                    name='pass',
+                    id='pass',
+                    required=True
+                ),
+                br(),
+                inp(
+                    type='submit',
+                    value='Submit'
+                ),
+                action='/',
+                method='get'
+            )
+        ),
+        lang='en'
+    ).pack()
 ```
