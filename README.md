@@ -29,7 +29,6 @@ def index():
   return html(
         head(
             meta(charset='UTF-8'),
-            link(rel='stylesheet', href='style'),
             title('Example Login')
         ),
         body(
