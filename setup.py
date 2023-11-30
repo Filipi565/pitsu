@@ -77,7 +77,7 @@ Example Login
 
 setup(
     name='pitsu',
-    version='1.0.7',
+    version='1.0.6',
     packages=['pitsu', 'pitsu/element'],
     author='Filipi565',
     description='a python module to create html pages with python code',
