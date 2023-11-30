@@ -1,18 +1,18 @@
 from . import _base
 
-Child = _base.Element | str
-Children = list[Child]
-
 Element = _base.Element
+
+Child = Element | str
+Children = list[Child]
 
 def _double_base(name):
     def a(*children:Child, **attributes:str):
-        return _base.Element(name, *children, **{'double': True, **attributes})
+        return Element(name, *children, **{'double': True, **attributes})
     return a
 
 def _not_double_base(name):
     def a(**attributes:str):
-        return _base.Element(name, **{'double': False, **attributes})
+        return Element(name, **{'double': False, **attributes})
     return a
 
 html = _double_base('html')
