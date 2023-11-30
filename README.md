@@ -6,13 +6,13 @@ a python module to create html pages with python code
 
 instal pitsu:
 
-```
+```bash
 pip3 install -i https://test.pypi.org/simple/ --upgrade pitsu
 ```
 
 or 
 
-```
+```bash
 pip install -i https://test.pypi.org/simple/ --upgrade pitsu
 ```
 

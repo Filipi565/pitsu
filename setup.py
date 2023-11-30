@@ -1,9 +1,6 @@
 from setuptools import setup
 
-DESCRIPTION = '''# pitsu
-a python module to create html pages with python code
-
-# how to use
+DESCRIPTION = '''# how to use
 ```the register process it's blocked in pypi so i only can upload in test pypi and may be some uninstable```
 
 instal pitsu:
@@ -20,7 +17,7 @@ pip install -i https://test.pypi.org/simple/ --upgrade pitsu
 
 simple example:
 
-```
+```python
 from pitsu import *
 
 html(
@@ -57,8 +54,7 @@ html(
 ```
 
 output:
-```
-
+```html
 <html lang="en">
 <head>
 <meta charset="UTF-8">
