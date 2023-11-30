@@ -18,5 +18,8 @@ setup(
     long_description_content_type='text/markdown',
     long_description=DESCRIPTION,
     url='https://github.com/Filipi565/pitsu',
-    license=LICENSE
+    license=LICENSE,
+    requires=[
+        
+    ]
 )
