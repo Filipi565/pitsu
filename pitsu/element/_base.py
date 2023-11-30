@@ -4,7 +4,7 @@ from .. import ElementError
 def _base1(name, attrs, *Any):
     content = list()
     for nome in attrs:
-        if isinstance(attrs[nome], bool):
+        if attrs[nome] and isinstance(attrs[nome], bool):
             content.append(nome)
         elif attrs[nome] and isinstance(attrs[nome], str):
             content.append(f'{nome}="{attrs[nome]}"')
@@ -15,7 +15,7 @@ def _base1(name, attrs, *Any):
 def _base2(name, attrs, children):
     content = list()
     for nome in attrs:
-        if isinstance(attrs[nome], bool):
+        if attrs[nome] and isinstance(attrs[nome], bool):
             content.append(nome)
         elif attrs[nome] and isinstance(attrs[nome], str):
             content.append(f'{nome}="{attrs[nome]}"')
