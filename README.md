@@ -2,18 +2,17 @@
 a python module to create html pages with python code
 
 # how to use
-```the register process it's blocked in pypi so i only can upload in test pypi and may be some uninstable```
 
 * instal pitsu:
 
+download or clone the "pitsu" repository
+
 ```bash
-pip3 install -i https://test.pypi.org/simple/ --upgrade pitsu
+cd pitsu
 ```
 
-or 
-
 ```bash
-pip install -i https://test.pypi.org/simple/ --upgrade pitsu
+pip install .
 ```
 
 simple example:
