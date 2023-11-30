@@ -18,31 +18,31 @@ pip install -i https://test.pypi.org/simple/ --upgrade pitsu
 
 simple example:
 
-```
+```python
 from pitsu import *
 
-<span style="color: rgb(255, 255, 60);">html</span>(
-    <span>head</span>(
-        <span style="color: rgb(255, 255, 60);">meta</span>(charset='UTF-8'),
-        <span style="color: rgb(255, 255, 60);">title</span>('Example Login')
+html(
+    head(
+        meta(charset='UTF-8'),
+        title('Example Login')
     ),
-    <span style="color: rgb(255, 255, 60);">body</span>(
-        <span style="color: rgb(255, 255, 60);">form</span>(
-            <span style="color: rgb(255, 255, 60);">inp</span>( # inp = input element
+    body(
+        form(
+            inp( # inp = input element
                 type='text',
                 name='user',
                 id='user',
                 required=True
             ),
-            <span style="color: rgb(255, 255, 60);">br</span>(),
-            <span style="color: rgb(255, 255, 60);">inp</span>(
+            br(),
+            inp(
                 type='password',
                 name='pass',
                 id='pass',
                 required=True
             ),
-            <span style="color: rgb(255, 255, 60);">br</span>(),
-            <span style="color: rgb(255, 255, 60);">inp</span>(
+            br(),
+            inp(
                 type='submit',
                 value='Submit'
             ),
@@ -51,7 +51,7 @@ from pitsu import *
         )
     ),
     lang='en'
-).<span style="color: rgb(255, 255, 60);">pack</span>()
+).pack()
 ```
 
 output:
