@@ -5,13 +5,13 @@ DESCRIPTION = '''# how to use
 
 instal pitsu:
 
-```
+```bash
 pip3 install -i https://test.pypi.org/simple/ --upgrade pitsu
 ```
 
 or 
 
-```
+```bash
 pip install -i https://test.pypi.org/simple/ --upgrade pitsu
 ```
 
@@ -77,7 +77,7 @@ Example Login
 
 setup(
     name='pitsu',
-    version='1.0.6',
+    version='1.0.7',
     packages=['pitsu', 'pitsu/element'],
     author='Filipi565',
     description='a python module to create html pages with python code',
