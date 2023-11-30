@@ -1,4 +1,6 @@
-# pitsu
+from setuptools import setup
+
+DESCRIPTION = '''# pitsu
 a python module to create html pages with python code
 
 # how to use
@@ -21,28 +23,28 @@ simple example:
 ```
 from pitsu import *
 
-<span style="color: rgb(255, 255, 60);">html</span>(
-    <span>head</span>(
-        <span style="color: rgb(255, 255, 60);">meta</span>(charset='UTF-8'),
-        <span style="color: rgb(255, 255, 60);">title</span>('Example Login')
+html(
+    head(
+        meta(charset='UTF-8'),
+        title('Example Login')
     ),
-    <span style="color: rgb(255, 255, 60);">body</span>(
-        <span style="color: rgb(255, 255, 60);">form</span>(
-            <span style="color: rgb(255, 255, 60);">inp</span>( # inp = input element
+    body(
+        form(
+            inp( # inp = input element
                 type='text',
                 name='user',
                 id='user',
                 required=True
             ),
-            <span style="color: rgb(255, 255, 60);">br</span>(),
-            <span style="color: rgb(255, 255, 60);">inp</span>(
+            br(),
+            inp(
                 type='password',
                 name='pass',
                 id='pass',
                 required=True
             ),
-            <span style="color: rgb(255, 255, 60);">br</span>(),
-            <span style="color: rgb(255, 255, 60);">inp</span>(
+            br(),
+            inp(
                 type='submit',
                 value='Submit'
             ),
@@ -51,11 +53,12 @@ from pitsu import *
         )
     ),
     lang='en'
-).<span style="color: rgb(255, 255, 60);">pack</span>()
+).pack()
 ```
 
 output:
 ```
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -74,3 +77,15 @@ Example Login
 </body>
 </html>
 ```
+'''
+
+setup(
+    name='pitsu',
+    version='1.0.6',
+    packages=['pitsu', 'pitsu/element'],
+    author='Filipi565',
+    description='a python module to create html pages with python code',
+    long_description_content_type='text/markdown',
+    long_description=DESCRIPTION,
+    url='https://github.com/Filipi565/pitsu',
+)
