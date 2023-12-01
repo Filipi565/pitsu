@@ -7,13 +7,13 @@ a python module to create html pages with python code
 * instal pitsu:
 
 ```bash
-pip3 install -i https://test.pypi.org/simple/ pitsu
+pip3 install https://github.com/Filipi565/pitsu/archive/refs/heads/main.zip
 ```
 
 or 
 
 ```bash
-pip install -i https://test.pypi.org/simple/ pitsu
+pip install https://github.com/Filipi565/pitsu/archive/refs/heads/main.zip
 ```
 
 simple example:
