@@ -21,4 +21,5 @@ setup(
     packages=[
         'pitsu', 'pitsu/element'
     ],
+    requires=[]
 )
