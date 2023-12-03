@@ -79,5 +79,5 @@ class Element:
             elif isinstance(nome, str):
                 pass
             else:
-                raise ElementError(f'value: {value} is not a list with only Elements or Strings')
+                raise ElementError(f'value: {value} is not a Iterable with only Elements or Strings')
         self._children = value
