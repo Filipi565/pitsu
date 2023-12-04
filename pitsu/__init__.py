@@ -3,4 +3,4 @@ class ClassError(Exception): pass
 
 from .element import *
 
-version = '1.0'
+version = '1.0.6'
