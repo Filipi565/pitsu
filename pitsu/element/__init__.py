@@ -20,6 +20,7 @@ head = _double_base('head')
 body = _double_base('body')
 anchor = _double_base('a')
 audio = _double_base('audio')
+br = lambda: '<br>'
 video = _double_base('video')
 image = img = _not_double_base('img')
 button = btn = _double_base('button')
@@ -36,4 +37,3 @@ script = _double_base('script')
 source = _not_double_base('source')
 textarea = _double_base('textarea')
 title = _double_base('title')
-br = lambda: '<br>'
