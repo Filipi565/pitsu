@@ -24,7 +24,9 @@ def _base2(name, attrs, children):
         else:
             pass
     sep = '\n'
-    return f"""<{name} {' '.join(content)}>\n{sep.join([child.pack() if isinstance(child, Element) else child for child in children])}\n</{name}>"""
+    if content:
+        return f"""<{name} {' '.join(content)}>\n{sep.join([child.pack() if isinstance(child, Element) else child for child in children])}\n</{name}>"""
+    return f"""<{name}>\n{sep.join([child.pack() if isinstance(child, Element) else child for child in children])}\n</{name}>"""
 
 class Element:
     def __init__(self, __name, *args, **kw):
