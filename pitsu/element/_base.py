@@ -10,7 +10,9 @@ def _base1(name, attrs, *Any):
             content.append(f'{nome}="{attrs[nome]}"')
         else:
             pass
-    return f"""<{name} {' '.join(content)}>"""
+    if content:
+        return f"""<{name} {' '.join(content)}>"""
+    return f"""<{name}>"""
 
 def _base2(name, attrs, children):
     content = list()
