@@ -9,6 +9,10 @@ with open(os.path.join(HERE, 'README.md')) as f:
 with open(os.path.join(HERE, 'LICENSE')) as f:
     LICENSE = f.read()
 
+URLS = {
+    "Source": "https://github.com/Filipi565/pitsu"
+}
+
 setup(
     name='pitsu',
     version='1.0.6',
@@ -21,5 +25,6 @@ setup(
     packages=[
         'pitsu', 'pitsu/element'
     ],
-    requires=[]
+    requires=[],
+    project_urls=URLS
 )
