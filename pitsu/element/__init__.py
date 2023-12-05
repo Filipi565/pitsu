@@ -15,7 +15,11 @@ def _not_double_base(name):
         return Element(name, **{'double': False, **attributes})
     return a
 
-html = _double_base('html')
+
+def __html(*children:Child, **attributes:str):
+    return _base.HtmlElement('html', *children, **{'double': True, **attributes})
+
+html = __html
 head = _double_base('head')
 body = _double_base('body')
 anchor = _double_base('a')
