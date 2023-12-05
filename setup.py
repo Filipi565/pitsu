@@ -13,6 +13,11 @@ URLS = {
     "Source": "https://github.com/Filipi565/pitsu"
 }
 
+PACKAGES = [
+    'pitsu',
+    'pitsu/element'
+]
+
 setup(
     name='pitsu',
     version='1.0.6',
@@ -20,11 +25,8 @@ setup(
     description='a python module to create html pages with python code',
     long_description_content_type='text/markdown',
     long_description=DESCRIPTION,
-    url='https://github.com/Filipi565/pitsu',
     license=LICENSE,
-    packages=[
-        'pitsu', 'pitsu/element'
-    ],
+    packages=PACKAGES,
     requires=[],
     project_urls=URLS
 )
