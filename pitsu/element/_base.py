@@ -25,8 +25,8 @@ def _base2(name, attrs, children):
             pass
     sep = '\n'
     if content:
-        return f"""<{name} {' '.join(content)}>\n{sep.join([child.pack() if isinstance(child, Element) else child for child in children])}\n</{name}>"""
-    return f"""<{name}>\n{sep.join([child.pack() if isinstance(child, Element) else child for child in children])}\n</{name}>"""
+        return f'''<{name} {' '.join(content)}>\n{sep.join([child.pack() if isinstance(child, Element) else child for child in children])}\n</{name}>'''
+    return f'''<{name}>\n{sep.join([child.pack() if isinstance(child, Element) else child for child in children])}\n</{name}>'''
 
 class Element:
     def __init__(self, __name, *args, **kw):
@@ -85,3 +85,22 @@ class Element:
             else:
                 raise ElementError(f'value: {value} is not a Iterable with only Elements or Strings')
         self._children = value
+
+class HtmlElement(Element):
+    def __init__(self, *children, **attributes):
+        Element.__init__(self, 'html', *children, **attributes)
+    
+    def pack(self):
+        content = list()
+        for nome in self._attributes:
+            if self._attributes[nome] and isinstance(self._attributes[nome], bool):
+                content.append(nome)
+            elif self._attributes[nome] and isinstance(self._attributes[nome], str):
+                content.append(f'{nome}="{self._attributes[nome]}"')
+            else:
+                pass
+        sep = '\n'
+        children = [child.pack() if isinstance(child, Element) else child for child in children]
+        if content:
+            return f'''<{self._name} {' '.join(content)}>\n{sep.join(children)}\n</{self._name}>'''
+        return f'''<{self._name}>\n{sep.join(children)}\n</{self._name}>'''
