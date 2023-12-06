@@ -8,8 +8,6 @@ def _base1(name, attrs, *Any):
             content.append(nome)
         elif attrs[nome] and isinstance(attrs[nome], str):
             content.append(f'{nome}="{attrs[nome]}"')
-        else:
-            pass
     if content:
         return f"""<{name} {' '.join(content)}>"""
     return f"""<{name}>"""
