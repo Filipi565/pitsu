@@ -31,7 +31,7 @@ button = btn = _double_base('button')
 div = _double_base('div')
 form = _double_base('form')
 def text(name:str, *children:Child, **attributes:str):
-    return _base.Element(name, *children, **{'double': True, **attributes})
+    return _base.Element(name, *children, **{**attributes, 'double': True})
 iframe = _double_base('iframe')
 inp = _not_double_base('input')
 label = _not_double_base('label')
