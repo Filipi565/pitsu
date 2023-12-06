@@ -18,7 +18,7 @@ def _not_double_base(name):
 def __html(*children:Child, **attributes:str):
     return _base.HtmlElement(*children, **{**attributes, 'double': True})
 
-
+# funções
 html = __html
 head = _double_base('head')
 body = _double_base('body')
