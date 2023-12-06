@@ -18,6 +18,10 @@ PACKAGES = [
     'pitsu/element'
 ]
 
+REQUIRES = [
+
+]
+
 setup(
     name='pitsu',
     version='1.0.6',
@@ -27,6 +31,6 @@ setup(
     long_description=DESCRIPTION,
     license=LICENSE,
     packages=PACKAGES,
-    requires=[],
+    requires=REQUIRES,
     project_urls=URLS
 )
