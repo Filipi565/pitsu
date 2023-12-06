@@ -9,8 +9,8 @@ def _base1(name, attrs, *Any):
         elif attrs[nome] and isinstance(attrs[nome], str):
             content.append(f'{nome}="{attrs[nome]}"')
     if content:
-        return f"""<{name} {' '.join(content)}>"""
-    return f"""<{name}>"""
+        return f'''<{name} {' '.join(content)}>'''
+    return f'''<{name}>'''
 
 def _base2(name, attrs, children):
     content = list()
