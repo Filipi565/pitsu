@@ -1,6 +1,6 @@
 [project]
 name = "pitsu"
-version = "1.1.1"
+version = "1.1.0"
 authors = [
   {name="Filipi565"},
 ]
@@ -16,7 +16,3 @@ classifiers = [
 [project.urls]
 Source = "https://github.com/Filipi565/pitsu"
 Issues = "https://github.com/Filipi565/pitsu/issues"
-
-[build-system]
-requires = ["setuptools>=61.0"]
-build-backend = "setuptools.build_meta"
