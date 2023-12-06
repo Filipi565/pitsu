@@ -100,7 +100,7 @@ class HtmlElement(Element):
             else:
                 pass
         sep = '\n'
-        children = [child.pack() if isinstance(child, Element) else child for child in children]
+        children = [child.pack() if isinstance(child, Element) else child for child in self._children]
         if content:
             return f'''<{self._name} {' '.join(content)}>\n{sep.join(children)}\n</{self._name}>'''
         return f'''<{self._name}>\n{sep.join(children)}\n</{self._name}>'''
