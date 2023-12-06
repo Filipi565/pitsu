@@ -19,8 +19,6 @@ def _base2(name, attrs, children):
             content.append(nome)
         elif attrs[nome] and isinstance(attrs[nome], str):
             content.append(f'{nome}="{attrs[nome]}"')
-        else:
-            pass
     sep = '\n'
     if content:
         return f'''<{name} {' '.join(content)}>\n{sep.join([child.pack() if isinstance(child, Element) else child for child in children])}\n</{name}>'''
