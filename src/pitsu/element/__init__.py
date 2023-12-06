@@ -7,17 +7,17 @@ Children = list[Child]
 
 def _double_base(name):
     def a(*children:Child, **attributes:str):
-        return Element(name, *children, **{'double': True, **attributes})
+        return Element(name, *children, **{**attributes, 'double': True})
     return a
 
 def _not_double_base(name):
     def a(**attributes:str):
-        return Element(name, **{'double': False, **attributes})
+        return Element(name, **{**attributes, 'double': False})
     return a
 
 
 def __html(*children:Child, **attributes:str):
-    return _base.HtmlElement(*children, **{'double': True, **attributes})
+    return _base.HtmlElement(*children, **{**attributes, 'double': True})
 
 html = __html
 head = _double_base('head')
