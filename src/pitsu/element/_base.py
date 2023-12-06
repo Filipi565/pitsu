@@ -84,7 +84,7 @@ class Element:
                 continue
             else:
                 raise ElementError(f'value: "{value}" is not a Iterable with only Elements or Strings')
-        self._children = value
+        self._children = list(value)
 
 class HtmlElement(Element):
     def __init__(self, *children, **attributes):
