@@ -24,7 +24,7 @@ REQUIRES = [
 
 setup(
     name='pitsu',
-    version='1.0.6',
+    version='1.1.0',
     author='Filipi565',
     description='a python module to create html pages with python code',
     long_description_content_type='text/markdown',
