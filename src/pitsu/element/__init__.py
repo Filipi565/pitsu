@@ -22,7 +22,7 @@ def __html(*children:Child, **attributes:str):
 html = __html
 head = _double_base('head')
 body = _double_base('body')
-anchor = _double_base('a')
+anchor = a = _double_base('a')
 audio = _double_base('audio')
 br = lambda: '<br>'
 video = _double_base('video')
@@ -37,6 +37,7 @@ inp = _not_double_base('input')
 label = _not_double_base('label')
 link = _not_double_base('link')
 meta = _not_double_base('meta')
+paragraph = p = _double_base('p')
 script = _double_base('script')
 source = _not_double_base('source')
 textarea = _double_base('textarea')
