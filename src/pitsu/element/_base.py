@@ -79,11 +79,11 @@ class Element:
     def children(self, value):
         for nome in value:
             if isinstance(nome, Element):
-                pass
+                continue
             elif isinstance(nome, str):
-                pass
+                continue
             else:
-                raise ElementError(f'value: {value} is not a Iterable with only Elements or Strings')
+                raise ElementError(f'value: "{value}" is not a Iterable with only Elements or Strings')
         self._children = value
 
 class HtmlElement(Element):
