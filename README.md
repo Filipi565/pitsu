@@ -55,6 +55,7 @@ html(
 ```
 
 output:
+
 ```html
 <!DOCTYPE html>
 <html lang="en">
