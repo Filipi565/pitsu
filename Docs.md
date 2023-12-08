@@ -30,4 +30,4 @@ method: append or add: add a item to the class list
 
 method: remove: remove a item to the class list
 
-method: replace: replace the value of a item to the given value
+method: replace: replace the value of a item to the given value for the class list
