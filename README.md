@@ -22,34 +22,34 @@ from pitsu import *
 
 html(
     head(
-        meta(charset='UTF-8'),
-        title('Example Login')
+        meta(charset="UTF-8"),
+        title("Example Login")
     ),
     body(
         form(
             inp( # inp = input element
-                type='text',
-                name='user',
-                id='user',
+                type="text",
+                name="user",
+                id="user",
                 required=True
             ),
             br(),
             inp(
-                type='password',
-                name='pass',
-                id='pass',
+                type="password",
+                name="pass",
+                id="pass",
                 required=True
             ),
             br(),
             inp(
-                type='submit',
-                value='Submit'
+                type="submit",
+                value="Submit"
             ),
-            action='/',
-            method='get'
+            action="/",
+            method="get"
         )
     ),
-    lang='en'
+    lang="en"
 )
 ```
 
