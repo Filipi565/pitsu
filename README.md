@@ -60,9 +60,7 @@ output:
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>
-Example Login
-</title>
+<title>Example Login</title>
 </head>
 <body>
 <form action="/" method="get">
