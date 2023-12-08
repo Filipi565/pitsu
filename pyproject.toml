@@ -1,8 +1,10 @@
 [project]
 name = "pitsu"
-version = "1.1.2"
+version = "1.2.0"
 authors = [
-  {name="Filipi565"},
+  {
+    name="Filipi565"
+  },
 ]
 
 description = "a python module to create html pages with python code"
@@ -17,3 +19,4 @@ classifiers = [
 [project.urls]
 Source = "https://github.com/Filipi565/pitsu"
 Issues = "https://github.com/Filipi565/pitsu/issues"
+Documentation = "https://github.com/Filipi565/pitsu/blob/main/Docs.md"

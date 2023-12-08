@@ -50,7 +50,7 @@ html(
         )
     ),
     lang='en'
-).pack()
+)
 ```
 
 output:

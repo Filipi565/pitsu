@@ -2,43 +2,43 @@ from . import _base
 
 Element = _base.Element
 
-Child = Element | str
-Children = list[Child]
+_Child = Element | str
 
-def _double_base(name):
-    def a(*children:Child, **attributes:str):
-        return Element(name, *children, **{**attributes, 'double': True})
+def __double_base(name:str):
+    def a(*child:_Child, **attributes:str):
+        return Element(name, *child, **{**attributes, "__double": True})
     return a
 
-def _not_double_base(name):
+def __not_double_base(name:str):
     def a(**attributes:str):
-        return Element(name, **{**attributes, 'double': False})
+        return Element(name, **{**attributes, "__double": False})
     return a
 
-def __html(*children:Child, **attributes:str):
-    return _base.HtmlElement(*children, **{**attributes, 'double': True})
+def __html(*child:_Child, **attributes:str):
+    return _base.HtmlElement(*child, **{**attributes, "__double": True})
+
+def __title(title:str):
+    return f"<title>{title}</title>"
 
 # funções
 html = __html
-head = _double_base('head')
-body = _double_base('body')
-anchor = a = _double_base('a')
-audio = _double_base('audio')
-br = lambda: '<br>'
-video = _double_base('video')
-image = img = _not_double_base('img')
-button = btn = _double_base('button')
-div = _double_base('div')
-form = _double_base('form')
-def text(name:str, *children:Child, **attributes:str):
-    return _base.Element(name, *children, **{**attributes, 'double': True})
-iframe = _double_base('iframe')
-inp = _not_double_base('input')
-label = _not_double_base('label')
-link = _not_double_base('link')
-meta = _not_double_base('meta')
-paragraph = p = _double_base('p')
-script = _double_base('script')
-source = _not_double_base('source')
-textarea = _double_base('textarea')
-title = _double_base('title')
+head = __double_base("head")
+body = __double_base("body")
+anchor = a = __double_base("a")
+audio = __double_base("audio")
+br = lambda: "<br>"
+video = __double_base("video")
+image = img = __not_double_base("img")
+button = btn = __double_base("button")
+div = __double_base("div")
+form = __double_base("form")
+iframe = __double_base("iframe")
+inp = __not_double_base("input")
+label = __not_double_base("label")
+link = __not_double_base("link")
+meta = __not_double_base("meta")
+paragraph = p = __double_base("p")
+script = __double_base("script")
+source = __not_double_base("source")
+textarea = __double_base("textarea")
+title = __title
