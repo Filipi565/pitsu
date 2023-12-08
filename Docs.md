@@ -6,7 +6,7 @@ ClassError
 
 # Class
 
-* Element(<span style="color:blue;">__name</span>: name of the element, *child: the children of the element, **attributes: the attributes of the element): Base Element Class
+* Element(__name</span: name of the element, *child: the children of the element, **attributes: the attributes of the element): Base Element Class
 
 method: editAttribute(a: the attribute that you want tho change, b: the value of the attribute)
 
