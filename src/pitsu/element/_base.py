@@ -1,7 +1,7 @@
 from .classes import Class_List as _class
 from .. import ElementError
 
-def __base1(name, attrs, *Any):
+def _base1(name, attrs, *Any):
     content = list()
     for nome in attrs:
         if attrs[nome] and isinstance(attrs[nome], bool):
@@ -12,7 +12,7 @@ def __base1(name, attrs, *Any):
         return f'''<{name} {' '.join(content)}>'''
     return f'''<{name}>'''
 
-def __base2(name, attrs, children):
+def _base2(name, attrs, children):
     content = list()
     for nome in attrs:
         if attrs[nome] and isinstance(attrs[nome], bool):
@@ -51,9 +51,9 @@ class Element:
 
     def pack(self):
         if self.__double:
-            base = __base2
+            base = _base2
         else:
-            base = __base1
+            base = _base1
         classes = ' '.join(self.__class_list)
         if classes:
             self.__attributes['class'] = classes
