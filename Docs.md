@@ -7,7 +7,7 @@ ClassError
 # Class
 
 * Element(__name:, *child: the children of the element, **attributes: the attributes of the element): Base Element Class
-<br>
+
 method: editAttribute(a: the attribute that you want tho change, b: the value of the attribute)
 
 method: editAttributes(**a: the attributes and the values that you want to edit)
@@ -23,9 +23,9 @@ property: attributes: return the attributes of the element
 property: children: return the children of the element
 
 * HtmlElement(*child: the children of the element, **attributes: the attributes of the element): Class for the html Element
-
+<br>
 * Class_List: Class to manager the class list of the elements
-
+<br>
 method: append or add: add a item to the class list
 
 method: remove: remove a item to the class list
