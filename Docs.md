@@ -23,6 +23,7 @@ property: attributes: return the attributes of the element
 property: children: return the children of the element
 <br>
 * HtmlElement(*child: the children of the element, **attributes: the attributes of the element): Class for the html Element
+
 <br>
 * Class_List: Class to manager the class list of the elements
 <br>
