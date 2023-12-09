@@ -24,9 +24,10 @@ property: children: return the children of the element
 
 <br>
 * HtmlElement(*child: the children of the element, **attributes: the attributes of the element): Class for the html Element
+
 <br>
 * Class_List: Class to manager the class list of the elements
-<br>
+
 method: append or add: add a item to the class list
 
 method: remove: remove a item to the class list
