@@ -7,7 +7,7 @@ def __base1(name, attrs, *Any):
         if attrs[nome] and isinstance(attrs[nome], bool):
             content.append(nome)
         elif attrs[nome] and isinstance(attrs[nome], str):
-            content.append(f'{nome}="{attrs[nome]}"')
+            content.append(f'{nome}=\"{attrs[nome]}\"')
     if content:
         return f'''<{name} {' '.join(content)}>'''
     return f'''<{name}>'''
@@ -18,7 +18,7 @@ def __base2(name, attrs, children):
         if attrs[nome] and isinstance(attrs[nome], bool):
             content.append(nome)
         elif attrs[nome] and isinstance(attrs[nome], str):
-            content.append(f'{nome}="{attrs[nome]}"')
+            content.append(f'{nome}=\"{attrs[nome]}\"')
     sep = '\n'
     children = [child.pack() if isinstance(child, Element) else child for child in children]
     if content:
@@ -45,6 +45,9 @@ class Element:
     
     def __str__(self):
         return self.pack()
+    
+    def __repr__(self):
+        return f'Element(\"{self.__name}\")'
 
     def pack(self):
         if self.__double:
@@ -89,15 +92,15 @@ class HtmlElement(Element):
     
     def pack(self):
         content = list()
-        for nome in self.__attributes:
-            if self.__attributes[nome] and isinstance(self.__attributes[nome], bool):
+        for nome in self.attributes:
+            if self.attributes[nome] and isinstance(self.attributes[nome], bool):
                 content.append(nome)
-            elif self.__attributes[nome] and isinstance(self.__attributes[nome], str):
-                content.append(f'{nome}="{self.__attributes[nome]}"')
+            elif self.attributes[nome] and isinstance(self.attributes[nome], str):
+                content.append(f'{nome}=\"{self.attributes[nome]}\"')
             else:
                 pass
         sep = '\n'
-        children = [child.pack() if isinstance(child, Element) else child for child in self.__children]
+        children = [child.pack() if isinstance(child, Element) else child for child in self.children]
         if content:
-            return f'''<!DOCTYPE html>\n<{self.__name} {' '.join(content)}>\n{sep.join(children)}\n</{self.__name}>'''
-        return f'''<!DOCTYPE html>\n<{self.__name}>\n{sep.join(children)}\n</{self.__name}>'''
+            return f'''<!DOCTYPE html>\n<{self.element_name} {' '.join(content)}>\n{sep.join(children)}\n</{self.element_name}>'''
+        return f'''<!DOCTYPE html>\n<{self.element_name}>\n{sep.join(children)}\n</{self.element_name}>'''
