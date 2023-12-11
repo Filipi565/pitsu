@@ -1,37 +1,53 @@
-# Exceptions
+# Element class
 
-ElementError
+create a element for your element page
 
-ClassError
+Exaple:
 
-# Class
+```python
+from pitsu import *
 
-* Element(__name:, *child: the children of the element, **attributes: the attributes of the element): Base Element Class
+document = html(
+    Element("div"), #creates a div element
+    lang="en",
+).pack()
+```
 
-method: editAttribute(a: the attribute that you want tho change, b: the value of the attribute)
+How to edit the class of the element?
 
-method: editAttributes(**a: the attributes and the values that you want to edit)
+There is 2 ways:
 
-method: pack(): render the element and return it as string
+```python
+from pitsu import *
 
-property: element_name: return the name of the element
+method1 = div(
+    id="method1"
+)
 
-property: class_list: return the class list of the element
+method1.class_list.add("Class1")
+method1.class_list.append("Class2") # append = add
 
-property: attributes: return the attributes of the element
+method2 = div(
+    id="method2",
+    **{"class": "Class1 Class2"}
+)
 
-property: children: return the children of the element
+document = html(
+    method1,
+    method2,
+    lang="en",
+).pack()
+```
 
-<br>
+warning: do not use both methods or your code will not work
 
-* HtmlElement(*child: the children of the element, **attributes: the attributes of the element): Class for the html Element
+# Class_List class
 
-<br>
+the manager of the class list for the element
 
-* Class_List: Class to manager the class list of the elements
+you can get the class list of your element using:
 
-method: append or add: add a item to the class list
-
-method: remove: remove a item to the class list
-
-method: replace: replace the value of a item to the given value for the class list
+```python
+myElement = div()
+myElement.class_list
+```
