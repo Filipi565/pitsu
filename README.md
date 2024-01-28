@@ -83,4 +83,4 @@ Example Login
 </html>
 ```
 
-see <a href="/Docs/main.md">Documentation</a>
+see <a href="https://github.com/Filipi565/pitsu/blob/main/Docs/main.md">Documentation</a>
