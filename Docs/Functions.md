@@ -1,5 +1,7 @@
 # Default Functions
 
+you can use the default functions to create the html page
+
 html
 a
 abbr
