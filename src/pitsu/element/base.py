@@ -25,4 +25,5 @@ class Element:
         return self.__class_list
     
     def pack(self) -> str:
-        raise NotImplemented
+        raise NotImplementedError
+        
