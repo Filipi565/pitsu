@@ -17,7 +17,7 @@ class Element(base.Element):
     def children(self) -> Children:
         return super().children
     
-    def pack(self) -> str:
+    def __pack__(self) -> str:
         if self.__double:
             pack = ph.pack_double
         else:
