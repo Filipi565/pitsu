@@ -28,14 +28,14 @@ html(
                 type="text",
                 name="user",
                 id="user",
-                required=NO_VALUE
+                required=""
             ),
             br(),
             inp(
                 type="password",
                 name="pass",
                 id="pass",
-                required=NO_VALUE
+                required=""
             ),
             br(),
             inp(
