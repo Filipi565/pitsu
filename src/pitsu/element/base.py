@@ -11,9 +11,9 @@ class Element:
         self.__name = __name
         self.__class_list = Class_List()
 
-    @final
+    @abstractmethod
     def __pack__(self) -> str:
-        return self.pack()
+        return NotImplemented
     
     @property
     def children(self):
@@ -30,7 +30,3 @@ class Element:
     @property
     def class_list(self):
         return self.__class_list
-    
-    @abstractmethod
-    def pack(self) -> str:
-        raise NotImplementedError
