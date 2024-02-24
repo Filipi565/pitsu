@@ -29,7 +29,7 @@ def pack_double(element_name, class_list, children, attributes):
     if class_list:
         attributes["class"] = SPACE.join(class_list)
     def func(attributes, children):
-        if attributes:
+        if attributes == dict():
             element_name1 = f"{element_name} "
         else:
             element_name1 = element_name
@@ -42,7 +42,7 @@ def pack_no_double(element_name, class_list, children, attributes):
     if class_list:
         attributes["class"] = SPACE.join(class_list)
     def func(attributes):
-        if attributes:
+        if attributes == dict():
             element_name1 = f"{element_name} "
         else:
             element_name1 = element_name
