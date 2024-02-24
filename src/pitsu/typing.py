@@ -1,39 +1,26 @@
-from .element.base import Element
 from typing import *
 from typing import __all__ as typing_all
-from abc import abstractmethod
-from .attributes import Attributes as _attrs
+from abc import abstractmethod as _absmethod
+from .element.base import Element
+from .attributes import Attributes
+from .class_list import Class_List
 
-_T = TypeVar("_T")
+Child = Union[Element, str]
+Children = List[Child]
 
-class _alias:
-    def __new__(self, type_: type[_T], name: str) -> type[_T]:
-        return type(name, (type_,), {})
+@runtime_checkable
+class SupportsPack(Protocol):
+    """An ABC with one abstract method __pack__."""
+    @_absmethod
+    def __pack__(self) -> str: ...
 
 __all__ = [
+    "SupportsPack",
     "Child",
     "Children",
-    "Value",
-    "Unused",
-    "Constant",
-    "SupportsPack",
-    "Attributes"
+    "Attributes",
+    "Class_List"
 ]
 
 __all__.extend(typing_all)
-
 del typing_all
-
-Child = Union[str, Element]
-Children = Sequence[Child]
-Unused = object
-Constant = type("Constant", (int,), {})
-Value = Union[str, Constant]
-Attributes = _alias(_attrs, "Attributes")
-
-class SupportsPack(Protocol):
-    """An ABC with one abstract method __pack__."""
-    __slots__ = ()
-    @abstractmethod
-    def __pack__(self) -> str:
-        pass

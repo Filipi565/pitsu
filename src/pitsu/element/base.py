@@ -1,12 +1,19 @@
-from ..class_list import *
-from ..attributes import *
+from ..class_list import Class_List
+from ..attributes import Attributes
+from abc import abstractmethod
+from typing import final
 
 class Element:
     def __init__(self, __name: str, *children, **attributes):
+        """Base Element Class"""
         self.__children = list(children)
-        self.__attributes = Attributes(**attributes)
+        self.__attributes = Attributes(attributes.items())
         self.__name = __name
         self.__class_list = Class_List()
+
+    @final
+    def __pack__(self) -> str:
+        return self.pack()
     
     @property
     def children(self):
@@ -24,6 +31,6 @@ class Element:
     def class_list(self):
         return self.__class_list
     
+    @abstractmethod
     def pack(self) -> str:
         raise NotImplementedError
-        

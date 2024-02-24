@@ -1,23 +1,23 @@
-from ..errors import ClassError
+from .errors import ClassError
 
-class Class_List:
+class Class_List(set[str]):
     def __init__(self):
-        self.__v: list[str] = list()
-
-    def __iter__(self):
-        return iter(self.__v)
+        """Class_List class"""
+        return super().__init__()
 
     def append(self, obj: str):
         if not isinstance(obj, str):
             raise ClassError(f"expected str, not {type(obj).__name__}")
 
-        self.__v.append(obj)
+        super().add(obj)
+    
+    add = append
     
     def remove(self, obj: str):
         if not isinstance(obj, str):
             raise ClassError(f"expected str, not {type(obj).__name__}")
+        
+        if not obj in self:
+            raise ClassError("object not in Class_List")
 
-        self.__v.remove(obj)
-    
-    def clear(self):
-        self.__v.clear()
+        super().remove(obj)

@@ -1,23 +1,25 @@
-from .typing import Child, Value
-from .element import Element
-from .element.html_element import HtmlElement
+from .typing import Child as _Child
+from .element.element import Element
+from .element.htmlelement import HtmlElement
 
-def __html(*children: Child, **attributes: Value):
+def __html(*children: _Child, **attributes: str):
     return HtmlElement(*children, **attributes)
 
 def __double_base(name: str, func_name: str = None):
-    def func(*children: Child, **attributes: Value):
-        return Element(name, *children, **{**attributes, "__double": True})
+    def func(*children: _Child, **attributes: str):
+        attributes.pop("__double", None)
+        return Element(name, *children, __double=True, **attributes)
 
-    func.__name__ = name if not func_name else func_name
+    func.__name__ = func_name or name
 
     return func
 
 def __not_double_base(name: str, func_name: str = None):
-    def func(**attributes: Value):
-        return Element(name, **{**attributes, "__double": False})
+    def func(**attributes: str):
+        attributes.pop("__double", None)
+        return Element(name, __double=False, **attributes)
 
-    func.__name__ = name if not func_name else func_name
+    func.__name__ = func_name or name
     
     return func
 
@@ -127,106 +129,4 @@ br.__name__ = "br"
 hr.__name__ = "hr"
 html.__name__ = "html"
 
-__all__ = [
-    html.__name__,
-    a.__name__,
-    abbr.__name__,
-    address.__name__,
-    area.__name__,
-    aside.__name__,
-    audio.__name__,
-    b.__name__,
-    base.__name__,
-    bdo.__name__,
-    blockquote.__name__,
-    body.__name__,
-    br.__name__,
-    button.__name__,
-    canvas.__name__,
-    caption.__name__,
-    cite.__name__,
-    command.__name__,
-    code.__name__,
-    col.__name__,
-    colgroup.__name__,
-    datagrid.__name__,
-    datalist.__name__,
-    dd.__name__,
-    details.__name__,
-    dfn.__name__,
-    div.__name__,
-    dl.__name__,
-    dialog.__name__,
-    dt.__name__,
-    em.__name__,
-    embed.__name__,
-    fieldset.__name__,
-    figure.__name__,
-    figcaption.__name__,
-    footer.__name__,
-    form.__name__,
-    fieldset.__name__,
-    h1.__name__,
-    h2.__name__,
-    h3.__name__,
-    h4.__name__,
-    h5.__name__,
-    h6.__name__,
-    header.__name__,
-    head.__name__,
-    hgroup.__name__,
-    hr.__name__,
-    i.__name__,
-    iframe.__name__,
-    img.__name__,
-    input.__name__,
-    inp.__name__,
-    ins.__name__,
-    kbd.__name__,
-    label.__name__,
-    legend.__name__,
-    li.__name__,
-    link.__name__,
-    main.__name__,
-    map.__name__,
-    marquee.__name__,
-    menu.__name__,
-    meta.__name__,
-    nav.__name__,
-    noscript.__name__,
-    object.__name__,
-    ol.__name__,
-    option.__name__,
-    optgroup.__name__,
-    output.__name__,
-    p.__name__,
-    param.__name__,
-    picture.__name__,
-    pre.__name__,
-    progress.__name__,
-    q.__name__,
-    s.__name__,
-    samp.__name__,
-    script.__name__,
-    section.__name__,
-    small.__name__,
-    source.__name__,
-    strong.__name__,
-    style.__name__,
-    sub.__name__,
-    summary.__name__,
-    sup.__name__,
-    table.__name__,
-    textarea.__name__,
-    tbody.__name__,
-    td.__name__,
-    tfoot.__name__,
-    th.__name__,
-    thead.__name__,
-    title.__name__,
-    tr.__name__,
-    u.__name__,
-    ul.__name__,
-    var.__name__,
-    video.__name__
-]
+__all__ = [_item for _item in globals() if not _item.startswith("_")]
