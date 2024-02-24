@@ -29,6 +29,7 @@ html(
                 name="user",
                 id="user",
                 required=""
+                class_="User Name"
             ),
             br(),
             inp(
@@ -36,6 +37,7 @@ html(
                 name="pass",
                 id="pass",
                 required=""
+                class_="User Pass"
             ),
             br(),
             inp(
