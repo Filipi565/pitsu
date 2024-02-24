@@ -5,5 +5,5 @@ class HtmlElement(Element):
     def __init__(self, *children: Child, **attributes: str):
         super().__init__("html", *children, **attributes)
     
-    def pack(self) -> str:
-        return "<!DOCTYPE html>\n" + super().pack()
+    def __pack__(self) -> str:
+        return "<!DOCTYPE html>\n" + super().__pack__()
