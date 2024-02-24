@@ -49,7 +49,7 @@ html(
         )
     ),
     lang="en"
-).pack()
+)
 ```
 
 you can use the method pack to pack your html page:
