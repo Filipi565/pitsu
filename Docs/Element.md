@@ -18,4 +18,5 @@ example:
 # the HtmlElement is not on default init file
 from pitsu.element.html_element import HtmlElement
 
+page = HtmlElement(body(...))
 ```
